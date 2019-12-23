@@ -8,6 +8,8 @@ import { abonne } from '../abonne';
 
 
 
+
+
 @Component({
   selector: 'app-releve',
   templateUrl: './releve.component.html',
@@ -29,7 +31,9 @@ export class ReleveComponent implements OnInit {
 
      this.benService.getoper(this.id)
        .subscribe(data => {
-              console.log(data);
+         
+        
+             console.log(data);
          this.op = data;
        }, error => console.log(error));
    }
