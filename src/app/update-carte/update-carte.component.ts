@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-update-carte',
   templateUrl: './update-carte.component.html',
