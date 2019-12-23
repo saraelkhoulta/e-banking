@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../services/comptes.service';
-import {abonne} from '../abonne';
-import {compte} from '../compte';
+import { abonne } from '../abonne';
+import { compte } from '../compte';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-listes-comptes',
@@ -19,19 +18,17 @@ export class ListesComptesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private compService: CompteService, private router: Router) {}
 
   ngOnInit() {
-     this.ab = new abonne();
-     this.id = this.route.snapshot.params.id;
+    this.ab = new abonne();
+    this.id = this.route.snapshot.params.id;
 
-     this.compService.getComptes(this.id)
-      .subscribe(data => {
+    this.compService.getComptes(this.id).subscribe(
+      data => {
         console.log(data);
         this.comptes = data;
-      }, error => console.log(error));
+      },
+      error => console.log(error)
+    );
   }
-
-
-
-
 
   releveComp(id: number) {
     this.router.navigate(['/releve', id]);
@@ -40,5 +37,4 @@ export class ListesComptesComponent implements OnInit {
   affCarte(id: number) {
     this.router.navigate(['/carte', id]);
   }
-
 }
