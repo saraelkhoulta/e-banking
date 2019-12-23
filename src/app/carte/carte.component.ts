@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CompteService } from '../services/comptes.service';
-import {compte} from '../compte';
+import { compte } from '../compte';
 import { ActivatedRoute, Router } from '@angular/router';
-
-
-
-
 
 @Component({
   selector: 'app-carte',
@@ -14,30 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./carte.component.scss']
 })
 export class CarteComponent implements OnInit {
-
   id: number;
   comp: compte;
   op: any;
 
-   constructor(private route: ActivatedRoute, private router: Router,
-               private benService: CompteService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private benService: CompteService) {}
 
-   ngOnInit() {
-     this.comp = new compte();
+  ngOnInit() {
+    this.comp = new compte();
 
+    this.id = this.route.snapshot.params.id;
 
-     this.id = this.route.snapshot.params.id;
+    this.benService.getCarte(this.id).subscribe(
+      data => {
+        console.log(data);
+        this.op = data;
+      },
+      error => console.log(error)
+    );
+  }
 
-     this.benService.getCarte(this.id)
-       .subscribe(data => {
-         console.log(data);
-         this.op = data;
-       }, error => console.log(error));
-   }
-
-   updateCarte(id: number) {
-
+  updateCarte(id: number) {
     this.router.navigate(['/updateCarte', id]);
-
-   }
+  }
 }
