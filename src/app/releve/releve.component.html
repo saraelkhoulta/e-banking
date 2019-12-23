@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">releve des comptes</div>
+      
+        <div class="panel-body">
+            <table *ngIf="op" class="table table-striped">
+                <tr>
+                    <th>Compte Benificiare</th><th>Type</th><th>Date</th><th>Montant</th>
+                </tr>
+                 <tr *ngFor="let p of op">
+                    <td>{{p.compteBene}}</td>
+                    <td>{{p.type}}</td>
+                    
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>

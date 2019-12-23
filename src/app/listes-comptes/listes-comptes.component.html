@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Liste des comptes</div>
+       
+        <div class="panel-body">
+            
+            <table *ngIf="comptes" class="table table-striped">
+                <tr>
+                    <th>Numero de Compte</th><th>solde</th>
+                </tr>
+                <tr *ngFor="let b of comptes">
+                    <td>{{b.idCompte}}</td>
+                    <td>{{p.solde|number:'0.2'}}</td>
+                    <td><button (click)="releveComp(p.idCompte)" class="btn btn-danger">releve de compte</button> </td>
+                    <td><button (click)="affCarte(p.idCompte)" class="btn btn-danger">afficher carte</button> </td>
+                
+                   
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
