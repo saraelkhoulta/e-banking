@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ReleveComponent } from './releve/releve.component';
 import { UpdateCarteComponent } from './update-carte/update-carte.component';
 
 const routes: Routes = [
@@ -10,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'releve/:id',
-    component: ReleveComponent
+    loadChildren: () => import('./releve/releve.module').then(m => m.ReleveModule)
   },
   {
     path: 'carte/:id',

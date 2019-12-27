@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 // Project imports
 import { ListesComptesComponent } from './listes-comptes.component';
-import {ListesComptesRoutingModule} from './listes-comptes-routing.module';
+import { ListesComptesRoutingModule } from './listes-comptes-routing.module';
 
 @NgModule({
   declarations: [ListesComptesComponent],

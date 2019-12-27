@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../services/comptes.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Compte } from '../compte';
-import { Operation } from '../Operation';
+import { Operation } from '../operation';
 
 @Component({
   selector: 'app-releve',
