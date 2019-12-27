@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Compte } from '../Compte';
-import { Operation } from '../Operation';
-import { Carte } from '../Carte';
+import { Carte } from '../carte';
 import { CompteService } from '../services/comptes.service';
-import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../services/comptes.service';
-import { Abonne } from '../Abonne';
-import { Compte } from '../Compte';
-import { Observable } from 'rxjs';
+import { Abonne } from '../abonne';
+import { Compte } from '../compte';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
