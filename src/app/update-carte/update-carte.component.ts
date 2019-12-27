@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Carte } from '../carte';
+import { Carte } from '../models/carte';
 import { CompteService } from '../services/comptes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 

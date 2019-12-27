@@ -1,10 +1,10 @@
 // Angular imports
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 // Project imports
-import {ReleveComponent} from './releve.component';
-import {ReleveRoutingModule} from './releve-routing.module';
+import { ReleveComponent } from './releve.component';
+import { ReleveRoutingModule } from './releve-routing.module';
 
 @NgModule({
   declarations: [ReleveComponent],

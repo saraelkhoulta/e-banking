@@ -6,10 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
-import { UpdateCarteComponent } from './update-carte/update-carte.component';
 
 @NgModule({
-  declarations: [AppComponent, UpdateCarteComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

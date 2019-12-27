@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UpdateCarteComponent } from './update-carte/update-carte.component';
 
 const routes: Routes = [
   {
@@ -17,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'updateCarte/:id',
-    component: UpdateCarteComponent
+    loadChildren: () => import('./update-carte/update-carte.module').then(m => m.UpdateCarteModule)
   }
 ];
 

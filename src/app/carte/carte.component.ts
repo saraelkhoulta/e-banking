@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../services/comptes.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { Compte } from '../compte';
-import { Carte } from '../carte';
+import { Compte } from '../models/compte';
+import { Carte } from '../models/carte';
 
 @Component({
   selector: 'app-carte',

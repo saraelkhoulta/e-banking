@@ -3,12 +3,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Project imports
-import { ReleveComponent } from './releve.component';
-
+import { UpdateCarteComponent } from './update-carte.component';
 const routes: Routes = [
   {
     path: '',
-    component: ReleveComponent
+    component: UpdateCarteComponent
   }
 ];
 
@@ -16,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ReleveRoutingModule {}
+export class UpdateCarteRoutingModule {}
