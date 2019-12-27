@@ -8,7 +8,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { ReleveComponent } from './releve/releve.component';
-import { CarteComponent } from './carte/carte.component';
 import { UpdateCarteComponent } from './update-carte/update-carte.component';
 
 
@@ -17,11 +16,7 @@ import { UpdateCarteComponent } from './update-carte/update-carte.component';
     AppComponent,
     ListesComptesComponent,
     ReleveComponent,
-    CarteComponent,
-    UpdateCarteComponent,
-
-
-
+    UpdateCarteComponent
   ],
   imports: [
     BrowserModule,

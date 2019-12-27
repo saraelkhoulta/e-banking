@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListesComptesComponent implements OnInit {
   ab: Abonne;
-   comptes:Compte[];
+  comptes: Compte[];
   id: string;
 
   constructor(private route: ActivatedRoute, private compService: CompteService, private router: Router) {}
@@ -19,11 +19,10 @@ export class ListesComptesComponent implements OnInit {
   ngOnInit() {
     this.ab = new Abonne();
     //this.id = this.ab.idAbonne;
-    this.id="ab";
-    
-    
+    this.id = 'ab';
+
     this.compService.getComptes(this.id).subscribe(
-      (data:any) => {
+      (data: any) => {
         console.log(data);
         this.comptes = data;
       },

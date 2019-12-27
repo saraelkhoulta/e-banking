@@ -4,8 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Compte } from '../compte';
 import { Operation } from '../Operation';
 
-
-
 @Component({
   selector: 'app-releve',
   templateUrl: './releve.component.html',
@@ -21,7 +19,7 @@ export class ReleveComponent implements OnInit {
   ngOnInit() {
     this.ab = new Compte();
     this.id = this.route.snapshot.params['id'];
-    this.op=new Operation();
+    this.op = new Operation();
 
     this.benService.getoper(this.id).subscribe(
       (data: any) => {
@@ -32,5 +30,3 @@ export class ReleveComponent implements OnInit {
     );
   }
 }
-
-

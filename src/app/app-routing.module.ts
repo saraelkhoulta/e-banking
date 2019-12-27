@@ -1,27 +1,24 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ListesComptesComponent } from './listes-comptes/listes-comptes.component';
-import { ReleveComponent } from './releve/releve.component';
-import { CarteComponent } from './carte/carte.component';
-import { UpdateCarteComponent } from './update-carte/update-carte.component';
-
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {ListesComptesComponent} from './listes-comptes/listes-comptes.component';
+import {ReleveComponent} from './releve/releve.component';
+import {UpdateCarteComponent} from './update-carte/update-carte.component';
 
 
 const routes: Routes = [
-{
-  path: 'liste', component: ListesComptesComponent
-}
-,
-{
-  path: 'releve/:id', component: ReleveComponent
-}
-,
-{
-  path: 'carte/:id', component: CarteComponent
-},
-{
-  path: 'updateCarte/:id', component: UpdateCarteComponent
-}
+  {
+    path: 'liste', component: ListesComptesComponent
+  },
+  {
+    path: 'releve/:id', component: ReleveComponent
+  },
+  {
+    path: 'carte/:id',
+    loadChildren: () => import('./carte/carte.module').then(m => m.CarteModule)
+  },
+  {
+    path: 'updateCarte/:id', component: UpdateCarteComponent
+  }
 
 ];
 
@@ -29,4 +26,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

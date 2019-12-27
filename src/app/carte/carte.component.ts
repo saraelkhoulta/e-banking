@@ -8,9 +8,7 @@ import { Carte } from '../carte';
 
 @Component({
   selector: 'app-carte',
-  templateUrl: './carte.component.html',
-  styleUrls: ['./carte.component.scss']
-
+  templateUrl: './carte.component.html'
 })
 export class CarteComponent implements OnInit {
   id: string;
@@ -21,12 +19,11 @@ export class CarteComponent implements OnInit {
 
   ngOnInit() {
     this.comp = new Compte();
-    
 
     this.id = this.route.snapshot.params.id;
 
     this.benService.getCarte(this.id).subscribe(
-      (data:any) => {
+      (data: any) => {
         console.log(data);
         this.cartes = data;
       },
