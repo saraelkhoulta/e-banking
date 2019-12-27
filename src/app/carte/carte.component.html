@@ -1,22 +1,22 @@
 <div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">affichage des cartes</div>
-      
-        <div class="panel-body">
-            <table *ngIf="cartes" class="table table-striped">
-                <tr>
-                    <th>ID CARTE</th><th>Type</th><th>active
-                </tr>
-                 <tr *ngFor="let p of cartes">
-                    <td>{{p.idCarte}}</td>
-                    <td>{{p.type}}</td>
-                    <td>{{p.active}}</td>
-                    <td><button (click)="updateCarte(p.idCarte)" class="btn btn-danger">Update carte</button> </td>
-                    
-                    
-                </tr>
-            </table>
+    <div class="row">
+        <div *ngFor="let p of cartes" class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card border-primary text-center">
+                <h2 class="card-header bg-primary">ID: {{ p.idCarte }}</h2>
+                <div class="card-body">
+                    <h4 class="card-text text-muted">Type: {{p.type}} </h4>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-text text-muted">Statut: {{p.isActivate}} </h4>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group btn-group-md mx-auto">
+                        <button (click)="updateCarte(p.idCarte)" type="button" class="btn btn-info"><i
+                                class="fa fa-credit-card"></i> Modifier une carte</button>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>

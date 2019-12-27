@@ -1,8 +1,8 @@
-export class compte {
+export class Compte {
 
-        public idCompte: number;
-        public solde: string;
-        public idAbonne: number;
-        public idBo: number;
+        public idCompte: string;
+        public solde: Float32Array;
+        public idAbonne: string;
+        public idBo: string;
 
 }

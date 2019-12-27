@@ -1,8 +1,9 @@
-export class carte {
+export class Carte {
 
-        public idCarte: number;
+       
+        public idCarte: string;
         public type: string;
-        public active: boolean;
+        public isActivate: boolean;
 
 
 }

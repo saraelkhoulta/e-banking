@@ -1,7 +1,11 @@
-export class operation {
+export class Operation {
 
-    public id: number;
-    public CompteBenf: number;
+    public idOperation: string;
+    public Date : Date;
     public type: string;
+	public numFacture:string;
+	public idCompteSrc:string;
+    public idCompteBeneficiaire:string;
+    public montant:Float32Array;
 
 }

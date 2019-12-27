@@ -1,26 +1,20 @@
 <div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">Liste des comptes</div>
-       
-        <div class="panel-body">
-            
-            <table *ngIf="comptes" class="table table-striped">
-                <tr>
-                    <th>Numero de Compte</th><th>solde</th>
-                </tr>
-                <tr *ngFor="let b of comptes">
-                    <td>{{b.idCompte}}</td>
-                    <td>{{p.solde|number:'0.2'}}</td>
-                    <td><button (click)="releveComp(p.idCompte)" class="btn btn-danger">releve de compte</button> </td>
-                    <td><button (click)="affCarte(p.idCompte)" class="btn btn-danger">afficher carte</button> </td>
-                
-                   
-                    
-                </tr>
-            </table>
+    <div class="row">
+        <div *ngFor="let compte of comptes "  class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card border-primary text-center">
+                <h2 class="card-header bg-primary">ID: {{ compte.idCompte }}</h2>
+                <div class="card-body">
+                    <h4 class="card-text text-muted">Solde: {{ compte.solde }} Dhs</h4>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group btn-group-md mx-auto">
+                        <button (click)="releveComp(compte.idCompte)" type="button" class="btn btn-info"><i
+                                class="fa fa-credit-card"></i> Relevé du compte</button>
+                        <button (click)="affCarte(compte.idCompte)" type="button" class="btn btn-primary"><i
+                                class="fa fa-credit-card"></i> Afficher les cartes</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
-
-

@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {operation} from '../operation';
 import { CompteService } from '../services/comptes.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { abonne } from '../abonne';
-
-
-
-
+import { Compte } from '../Compte';
+import { Operation } from '../Operation';
 
 
 
@@ -16,26 +12,25 @@ import { abonne } from '../abonne';
   styleUrls: ['./releve.component.scss']
 })
 export class ReleveComponent implements OnInit {
+  id: string;
+  ab: Compte;
+  op: Operation;
 
-  id: number;
-  ab: abonne;
-  op: any;
+  constructor(private route: ActivatedRoute, private router: Router, private benService: CompteService) {}
 
-   constructor(private route: ActivatedRoute, private router: Router,
-               private benService: CompteService) { }
+  ngOnInit() {
+    this.ab = new Compte();
+    this.id = this.route.snapshot.params['id'];
+    this.op=new Operation();
 
-   ngOnInit() {
-     this.ab = new abonne();
-
-     this.id = this.route.snapshot.params.id;
-
-     this.benService.getoper(this.id)
-       .subscribe(data => {
-         
-        
-             console.log(data);
-         this.op = data;
-       }, error => console.log(error));
-   }
-
+    this.benService.getoper(this.id).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.op = data;
+      },
+      error => console.log(error)
+    );
+  }
 }
+
+

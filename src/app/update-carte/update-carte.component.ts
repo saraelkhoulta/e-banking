@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {carte} from '../carte';
+import { Compte } from '../Compte';
+import { Operation } from '../Operation';
+import { Carte } from '../Carte';
 import { CompteService } from '../services/comptes.service';
-import {compte} from '../compte';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -15,39 +16,36 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateCarteComponent implements OnInit {
 
 
-  id: number;
- car: carte;
- cartes: any;
+  id: string;
+ 
+ cartes: Carte;
 
   constructor(private route: ActivatedRoute, private router: Router,
               private comService: CompteService ) { }
 
   ngOnInit() {
-    this.car = new carte();
+    this.cartes = new Carte();
 
-    this.id = this.route.snapshot.params.idCarte;
-
+    this.id = this.route.snapshot.params.id;
     this.comService.getCarte(this.id)
-      .subscribe(data => {
+      .subscribe((data:any) => {
         console.log(data);
         this.cartes = data;
       }, error => console.log(error));
   }
 
   updatecarte() {
-    this.comService.updatecar(this.id, this.car)
+    this.comService.updatecar(this.id, this.cartes)
       .subscribe(data => console.log(data), error => console.log(error));
-    this.car = new carte();
-    this.gotoList();
+    this.cartes = new Carte();
+   
   }
 
   onSubmit() {
     this.updatecarte();
   }
 
-  gotoList() {
-    this.router.navigate(['/carte']);
-  }
+ 
 
 
 }

@@ -13,14 +13,14 @@ const routes: Routes = [
 }
 ,
 {
-  path: 'releve', component: ReleveComponent
+  path: 'releve/:id', component: ReleveComponent
 }
 ,
 {
-  path: 'carte', component: CarteComponent
+  path: 'carte/:id', component: CarteComponent
 },
 {
-  path: 'updateCarte', component: UpdateCarteComponent
+  path: 'updateCarte/:id', component: UpdateCarteComponent
 }
 
 ];

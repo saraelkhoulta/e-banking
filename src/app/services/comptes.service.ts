@@ -6,25 +6,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CompteService {
-  private baseUrl = 'http://localhost:8080/comptes';
-  private baseUrl1 = 'http://localhost:8080/operation';
-  private baseUrl2 = 'http://localhost:8080/carte';
+  private baseUrl = 'http://localhost:8800/Comptes/allComptes';
+  private baseUrl1 = 'Localhost:8800/Comptes/DebitCredit';
+  private baseUrl2 = 'http://localhost:8800/Cartes/all';
+  private baseUrl3 = 'http://localhost:8800/update';
 
   constructor(private HttpClient: HttpClient) {}
 
-  public getComptes(id: number) {
+  public getComptes(id: string) {
     return this.HttpClient.get(`${this.baseUrl}/${id}`);
   }
 
-  public updatecar(id: number, value: any): Observable<Object> {
-    return this.HttpClient.put(`${this.baseUrl}/${id}`, value);
+  public updatecar(id: string, value: any): Observable<Object> {
+    
+    return this.HttpClient.put(`${this.baseUrl3}/${id}`, value);
   }
 
-  public getoper(id: number) {
+  public getoper(id: string) {
     return this.HttpClient.get(`${this.baseUrl1}/${id}`);
   }
 
-  public getCarte(id: number) {
+  public getCarte(id: string) {
     return this.HttpClient.get(`${this.baseUrl2}/${id}`);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompteService } from '../services/comptes.service';
-import { abonne } from '../abonne';
-import { compte } from '../compte';
+import { Abonne } from '../Abonne';
+import { Compte } from '../Compte';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,18 +11,20 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./listes-comptes.component.scss']
 })
 export class ListesComptesComponent implements OnInit {
-  ab: abonne;
-  public comptes;
-  id: number;
+  ab: Abonne;
+   comptes:Compte[];
+  id: string;
 
   constructor(private route: ActivatedRoute, private compService: CompteService, private router: Router) {}
 
   ngOnInit() {
-    this.ab = new abonne();
-    this.id = this.route.snapshot.params.id;
-
+    this.ab = new Abonne();
+    //this.id = this.ab.idAbonne;
+    this.id="ab";
+    
+    
     this.compService.getComptes(this.id).subscribe(
-      data => {
+      (data:any) => {
         console.log(data);
         this.comptes = data;
       },
@@ -30,11 +32,11 @@ export class ListesComptesComponent implements OnInit {
     );
   }
 
-  releveComp(id: number) {
-    this.router.navigate(['/releve', id]);
+  releveComp(id: string) {
+    this.router.navigate(['releve', id]);
   }
 
-  affCarte(id: number) {
-    this.router.navigate(['/carte', id]);
+  affCarte(id: string) {
+    this.router.navigate(['carte', id]);
   }
 }
